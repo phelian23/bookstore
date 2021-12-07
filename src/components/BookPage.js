@@ -1,16 +1,10 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import BookList from './bookList';
 import AddNew from './addNew';
 
 const Books = () => {
-  const books = [
-    {
-      title: '',
-      author: '',
-      id: uuidv4(),
-    },
-  ];
+  const books = useSelector((state) => state.booksReducer);
 
   return (
     <div className="container">

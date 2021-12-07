@@ -17,8 +17,8 @@ BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape(
     {
       title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
     },
   )).isRequired,
 };
