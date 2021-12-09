@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
+import styles from '../styles/bookItem.module.css';
 
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
@@ -12,11 +13,13 @@ const BookItem = ({ book }) => {
   const id = item_id;
 
   return (
-    <li>
+    <li className={styles.listCont}>
       <div>
-        <h5>{category}</h5>
-        <h3>{title}</h3>
-        <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
+        <h5 className={styles.category}>{category}</h5>
+        <h3 className={styles.title}>{title}</h3>
+        <button type="button" className={styles.listBtn}>Comment</button>
+        <button type="button" className={styles.listBtn} onClick={() => dispatch(removeBook(id))}>Remove</button>
+        <button type="button" className={styles.listBtn}>Edit</button>
       </div>
     </li>
   );
