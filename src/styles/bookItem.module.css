@@ -15,7 +15,7 @@
   height: 1.125rem;
   margin: 0 2.438rem 0 0;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -28,7 +28,7 @@
 .title {
   width: 40%;
   margin: 0.188rem 20.188rem 0 0;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, sans-serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -42,7 +42,7 @@
   height: 1.5rem;
   margin: 0.188rem 0.9rem 0.125rem 0;
   padding-right: 0.9rem;
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
