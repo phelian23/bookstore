@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -6,7 +7,9 @@ import { removeBook } from '../redux/books/books';
 const BookItem = ({ book }) => {
   const dispatch = useDispatch();
 
-  const { title, id, category } = book;
+  const { item_id, title, category } = book;
+
+  const id = item_id;
 
   return (
     <li>
@@ -24,7 +27,7 @@ BookItem.propTypes = {
     {
       title: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
+      item_id: PropTypes.string.isRequired,
     },
   ).isRequired,
 };

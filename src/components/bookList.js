@@ -6,7 +6,7 @@ const BookList = ({ books }) => (
   <ul>
     {books.map((book) => (
       <BookItem
-        key={book.id}
+        key={book.item_id}
         book={book}
       />
     ))}
@@ -16,8 +16,8 @@ const BookList = ({ books }) => (
 BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape(
     {
+      item_id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
     },
   )).isRequired,
