@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+hr {
+  margin: 3rem auto;
+  width: 84%;
+  border: 1px solid #e8e8e8;
+}
