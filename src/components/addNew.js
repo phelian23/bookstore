@@ -23,8 +23,8 @@ const AddNew = () => {
     const { title, category } = inputValues;
 
     const newBook = {
+      item_id: id,
       title,
-      id,
       category,
     };
     dispatch(addBook(newBook));
