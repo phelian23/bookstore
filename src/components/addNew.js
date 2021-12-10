@@ -24,22 +24,17 @@ const AddNew = () => {
     const id = uuidv4();
     const { title, category } = inputValues;
 
-    if (title.trim()) {
-      if (category.trim()) {
-        const newBook = {
-          item_id: id,
-          title,
-          category,
-        };
-        dispatch(addBook(newBook));
-      } else {
-        setInputValues({
-          errMsg: 'Please select category',
-        });
-      }
+    if (category.trim()) {
+      const newBook = {
+        item_id: id,
+        title,
+        category,
+      };
+      dispatch(addBook(newBook));
     } else {
       setInputValues({
-        errMsg: 'Please Add Title',
+        errMsg: 'Please select category',
+        title: '',
       });
     }
   };
@@ -53,6 +48,7 @@ const AddNew = () => {
         placeholder="Book title"
         onChange={onChange}
         className={styles.title}
+        required
       />
       <select className={styles.category} name="category" onChange={onChange} required>
         <option>Category</option>
