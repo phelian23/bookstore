@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
+import styles from '../styles/addNew.module.css';
 
 const AddNew = () => {
   const [inputValues, setInputValues] = useState({
     title: '',
     category: '',
+    errMsg: '',
   });
   const dispatch = useDispatch();
 
@@ -22,26 +24,33 @@ const AddNew = () => {
     const id = uuidv4();
     const { title, category } = inputValues;
 
-    const newBook = {
-      item_id: id,
-      title,
-      category,
-    };
-    dispatch(addBook(newBook));
+    if (category.trim()) {
+      const newBook = {
+        item_id: id,
+        title,
+        category,
+      };
+      dispatch(addBook(newBook));
+    } else {
+      setInputValues({
+        errMsg: 'Please select category',
+        title: '',
+      });
+    }
   };
 
   return (
-    <form className="form-container" onSubmit={submitBookToStore}>
-      <h3>ADD NEW BOOK</h3>
+    <form className={styles.form} onSubmit={submitBookToStore}>
+      <h3 className={styles.heading}>ADD NEW BOOK</h3>
       <input
         type="text"
-        className="input-text"
         name="title"
         placeholder="Book title"
         onChange={onChange}
+        className={styles.title}
         required
       />
-      <select placeholder="categories" name="category" onChange={onChange} required>
+      <select className={styles.category} name="category" onChange={onChange} required>
         <option>Category</option>
         <option value="Action">Action</option>
         <option value="Science Fiction">Science Fiction</option>
@@ -51,7 +60,9 @@ const AddNew = () => {
         <option value="History">History</option>
         <option value="Romance">Romance</option>
       </select>
-      <button type="submit" className="input-submit">Submit</button>
+      <button type="submit" className="input-submit">ADD BOOK</button>
+      <br />
+      <span>{inputValues.errMsg}</span>
     </form>
   );
 };

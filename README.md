@@ -5,6 +5,8 @@ The Bookstore is a that allows user to:
 - Add a book.
 - Remove a selected book.
 
+![screenshot](./src/images/bookPage.PNG)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Built With
@@ -16,6 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Application Page url
 
+[Live Demo](https://app.netlify.com/sites/competent-chandrasekhar-b69b93/deploys/61b31f3598e2f00008b8d29f)
 
 ## Getting Started
 

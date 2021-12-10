@@ -18,6 +18,7 @@ const Books = () => {
     <div className="container">
       <div className="inner">
         <BookList books={books} />
+        <hr />
         <AddNew setItemid={setItemid} />
       </div>
     </div>

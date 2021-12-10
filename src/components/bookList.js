@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BookItem from './bookItem';
+import styles from '../styles/bookList.module.css';
 
 const BookList = ({ books }) => (
-  <ul>
+  <ul className={styles.booklistCont}>
     {books.map((book) => (
       <BookItem
         key={book.item_id}
